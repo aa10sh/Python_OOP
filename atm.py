@@ -1,10 +1,10 @@
 class Atm:
-  def __init__(self):
+  def __init__(self): ## This is constructor, it will run as soon as we create an object of the class.
     self.user_balance=0
     self.user_name="xyz"
     self.user_pin="1234"
 
-    self.homepage()
+    self.homepage() # homepage method will automatically called as soon as we create an Atm object.
 
   def homepage(self):
      user_input=int(input("""
@@ -32,7 +32,7 @@ Your response: """))
         
     
 
-  def create_account(self):
+  def create_account(self): # Thses functions inside class are called methods.
     self.user_name=input("Enter User name: ")
     self.user_pin=int(input("Enter you pin: "))
     print("pin succesfully set")
@@ -79,14 +79,17 @@ Your response: """))
 
   def change_pin(self):
     print(self.user_name,"is changing pin...")
-    new_pin=int(input("Enter your new pin: "))
-    self.user_pin=new_pin
-    print("Pin changed succesfully")
+    old_pin=int(input("enter your old pin: "))
+    if(old_pin==self.__user_pin):
+      new_pin=int(input("Enter your new pin: "))
+      self.__user_pin=new_pin
+      print("Pin changed succesfully")
     go_home=input("Do you want to move on Home page? ")
     if(go_home=="Yes"):
       self.homepage()        
 
 
 
-atm=Atm()
-
+atm=Atm() # atm object is created in memory(stack) and the self variable of class will refer to that object in memory.
+print(atm.check_balance) # This will print the address of the check_balance method in memory e.g. <__main__.Atm object at 0x000001F66CB38C20
+atm.check_balance() # This way we can call particular methods using object.
