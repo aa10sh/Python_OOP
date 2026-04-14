@@ -35,4 +35,14 @@ change_car(car)
 print("address of car object is: ",id(car))  ## address of car object is:  1402855066656
 print("Car name later:",car.name)  ## XUV ## the name of car is changed 
 
+## Important concept:
+## Class ke objects are mutable like list, dict and sets.
+## Which means sending list in a function might cause changes in original List,
+## so it's good pratice to clone it first a send the clone to the function.
+## you can do so as:  function(List[:])   , it would send clone to the function.
+
+## Tuples are the immutable data types
+## Tuples are also passed by reference, but when function tries to change it,
+## it creates a new copy of tuple at another address.
+
 
