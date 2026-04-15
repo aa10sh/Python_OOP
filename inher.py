@@ -31,7 +31,7 @@ Adarsh.review()
 
 print(Adarsh.year)
 print(Adarsh._User__location) ## Delhi(name mangling)
-print(Adarsh.location)     ## AttributeError: 'Student' object has no attribute 'location'
+print(Adarsh.__location)     ## AttributeError: 'Student' object has no attribute '__location'
                            ## as location is private data of User class it can't access directly.
 
 
